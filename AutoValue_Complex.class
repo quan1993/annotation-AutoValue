@@ -1,0 +1,58 @@
+
+import javax.annotation.Generated;
+
+@Generated("com.google.auto.value.processor.AutoValueProcessor")
+ final class AutoValue_Complex extends Complex {
+
+  private final double real;
+  private final double imaginary;
+
+  AutoValue_Complex(
+      double real,
+      double imaginary) {
+    this.real = real;
+    this.imaginary = imaginary;
+  }
+
+  @Override
+  public double getReal() {
+    return real;
+  }
+
+  @Override
+  public double getImaginary() {
+    return imaginary;
+  }
+
+  @Override
+  public String toString() {
+    return "Complex{"
+        + "real=" + real + ", "
+        + "imaginary=" + imaginary
+        + "}";
+  }
+
+  @Override
+  public boolean equals(Object o) {
+    if (o == this) {
+      return true;
+    }
+    if (o instanceof Complex) {
+      Complex that = (Complex) o;
+      return (Double.doubleToLongBits(this.real) == Double.doubleToLongBits(that.getReal()))
+           && (Double.doubleToLongBits(this.imaginary) == Double.doubleToLongBits(that.getImaginary()));
+    }
+    return false;
+  }
+
+  @Override
+  public int hashCode() {
+    int h = 1;
+    h *= 1000003;
+    h ^= (Double.doubleToLongBits(this.real) >>> 32) ^ Double.doubleToLongBits(this.real);
+    h *= 1000003;
+    h ^= (Double.doubleToLongBits(this.imaginary) >>> 32) ^ Double.doubleToLongBits(this.imaginary);
+    return h;
+  }
+
+}
